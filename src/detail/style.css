@@ -1,0 +1,57 @@
+/* 좌측 이미지 */
+
+#detail {
+    display: flex;
+    width:100%;
+    height:100vh;
+}
+.menuname{
+    font-size: 25px;
+    margin-top: 15px;
+}
+#imgdiv{
+    width:80%;
+}
+#imgdiv img{
+    width:95%;
+    height:100%;
+}
+
+
+
+/* 우측 div */
+
+#castdiv{
+    display: flex;
+    width:90%;
+    height:250px;
+    overflow: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    position: absolute;
+    left:0%;
+    top:5%;
+}
+#detaildiv{
+    height:100%;
+    width:40%;
+    position: relative;
+}
+.cast {
+    width:150px;
+    height: 200px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+}
+.cast p { padding-left: 10px; 
+    margin-top: 0;}
+.cast span { font-size: 14px;
+    padding-left: 10px; 
+        font-weight: normal;
+    padding-bottom: 20px;}
+.cast img {
+    width:100%;
+    height:140px;
+    border-radius: 20px;
+}
