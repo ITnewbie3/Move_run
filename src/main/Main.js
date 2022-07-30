@@ -15,6 +15,11 @@ const Main = () => {
     return (
         <div id='topbox'>
         <Header/>
+        <div id='blindbox'>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
 
             <div id='midbox'>
             <Swiper
@@ -33,45 +38,38 @@ const Main = () => {
         modifier: 1,
         slideShadows: true,
       }} 
-      pagination={true}
+      pagination={false}
       modules={[EffectCoverflow, Pagination]} // 커버이펙트 /
       autoplay={{delay: 3000}} //3초마다 자동으로 넘기기
       loop={true} //무한반복
         >
+
              <SwiperSlide>
-            <div className='inbox' 
-            style={{backgroundImage: 'url(/img/movie.gif)'}}>
+            <div className='inbox' >
             <img src='img/aven.jpg' alt=''></img>
             <div className='textbox'>
                 <p>The Avengers</p>
                 <span>2012Year</span>
                 <b><img src='img/america.png' alt=''></img></b>
-                <h3>Tony Strak</h3>
-                <h4>Steve Rogers</h4>
-                <h5>Bruce Banner</h5>
                 </div>
             </div>
             </SwiperSlide>
             <SwiperSlide>
-            <div className='inbox' 
-            style={{backgroundImage: 'url(/img/movie.gif)'}}>
+            <div className='inbox' >
                <img src='img/aven.jpg' alt=''></img>
             </div>
             </SwiperSlide>
             <SwiperSlide>
-            <div className='inbox' 
-            style={{backgroundImage: 'url(/img/movie.gif)'}}>
+            <div className='inbox' >
                 <img src='img/aven.jpg' alt=''></img>
             </div>
             </SwiperSlide>
-            <SwiperSlide><div className='inbox' 
-            style={{backgroundImage: 'url(/img/movie.gif)'}}>
+            <SwiperSlide><div className='inbox' >
                 <img src='img/aven.jpg' alt=''></img>
             </div>
             </SwiperSlide>
             <SwiperSlide>
-                <div className='inbox' 
-            style={{backgroundImage: 'url(/img/movie.gif)'}}>
+                <div className='inbox' >
                <img src='img/aven.jpg' alt=''></img>
             </div>
             </SwiperSlide>
