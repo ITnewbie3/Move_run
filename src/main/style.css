@@ -9,21 +9,134 @@
         opacity: 1;
     }
 }
-/* 블라인드박스 */
+/* 블라인드박스 디자인 */
 #blindbox{
     position: absolute;
     width:100%;
     height:100%;
     top:0;
     background: #aaa;
+    opacity: 0;
+
 }
-.size{
-    width:50%;
-    height:80%;
+.m_img {
+    width:100%;
+    height:100%;
+    overflow: hidden;
+    position: absolute;
+    top:0;
+    left:0;
+}
+.m_img:nth-child(1) img{
+    position: absolute;
+    left:-50%;
+    top:0;
+    transition: 1s;
+    transform: skewX(-30deg);
+}
+.m_img:nth-child(2) img{
+    position: absolute;
+    right:-50%;
+    top:0;
+    transition: 1s;
+    transform: skewX(30deg);
+}
+.m_img img{
+    width:30%;
+    height:100%;
+}
+#contentbox {
+    width:30%;
+    height:30%;
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    opacity: 0;
+    color:black;
+    transition: 1.5s;
 }
 
+#contentbox > p {
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    font-size: 35px;
+    color:white;
+}
+#contentbox span {
+    width:10%;
+    position: absolute;
+    left:50%;
+    top:80%;
+    transform: translate(-50%,-50%);
+    font-size: 30px;
+    color:white;
+}
+#contentbox b img{
+    width:15%;
+    height:15%;
+    position: absolute;
+    top:50%;
+    left:70%;
+    transform: translate(-50%,-50%);
+}
+.btn_even{
+    display: flex;
+    width:100%;
+    position: absolute;
+    top:100%;
+    left:20%;
+    opacity: 0;
+ }
+ .btn_even p{
+    border-radius: 15px;
+    width:100px;
+    text-align: center;
+    line-height: 60px;
+    padding: 10px;
+    background: deepskyblue;
+    margin-right: 60px;
+ }
 
-/* 최상위 div 사이즈조정 */
+
+
+/* 클릭시 실행될 이벤트 */
+
+#blindbox.on .m_img:nth-child(1) img{
+    position: absolute;
+    left:5%;
+    top:0;
+    transform: skewX(-30deg);
+    z-index: 10;
+}
+#blindbox.on .m_img:nth-child(2) img{
+    position: absolute;
+    right:5%;
+    top:0;
+    transform: skewX(30deg);
+    z-index: 10;
+}
+#blindbox.on #contentbox{
+    opacity: 1;
+    color:white;
+    z-index: 10;
+}
+#blindbox.on .btn_even{
+    opacity: 1;
+    z-index: 10;
+}
+#blindbox.on {
+    opacity: 1;
+
+}
+
+#midbox.off{
+    opacity: 0.5;
+}
+
+/* 최상위 div 사이즈조정 및 초기화 */
 #topbox{
     width:100%;
     height:100vh;
@@ -37,6 +150,10 @@
     height:100%;
     transition: 1s;
 }
+a{
+    text-decoration: none;
+    color:inherit;
+}
 
 /* 호버이벤트  */
 .inbox{
@@ -48,13 +165,14 @@
     position: relative;
     transition: 0.5s;
     text-align: center;
+    z-index: 8;
 }
 .inbox > img{
     position: absolute;
     top:81px;
     left:38px;
     width:90%;
-    height:49%;
+    height:70%;
     border-radius: 10px;
 }
 .textbox{
@@ -71,7 +189,7 @@
     font-size: 30px;
     font-weight: bold;
     position: absolute;
-    top:-200px;
+    bottom:0;
     left:50%;
     transform: translateX(-50%);
     z-index: 10;
@@ -86,39 +204,23 @@
     transition: 0.5s;
     transform: translateY(-50%);
 }
-.textbox img{
-    width:15%;
-    height:15%;
-    position: absolute;
-    top:150%;
-    right:-10%;
-}
-.inbox:hover b >img{
-    top:0;
-    transition: 1.5s;
-    transform:rotateY(720deg) rotate(45deg);
-}
 
-.inbox:hover p{
+/* .inbox:hover p{
     opacity: 1;
-    top:-10px;
+    bottom:-90%;
     transform: scale(1.2);
     transition: 0.5s;
-}
+} */
 .inbox:hover .textbox{
     opacity: 1;
-}
-.inbox:hover span{
-    left:50%;    
 }
 .inbox:hover {
     transform: scale(1.3);
 }
-.inbox:hover > img{
+/* .inbox:hover > img{
     transform: rotateY(360deg);
     transition: 0.5s;
-    opacity: 0.5;
-}
+} */
 
 /* 호버이벤트 종료 */
 

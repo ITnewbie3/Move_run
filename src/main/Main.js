@@ -6,19 +6,36 @@ import "swiper/css"; //basic
 import "swiper/css/navigation"; // cover Effect
 import "swiper/css/pagination";// cover Effect
 import "swiper/css/effect-coverflow";// cover Effect
+import { Link } from 'react-router-dom';
 import Header from '../include/Header'
 
 SwiperCore.use([Navigation, Pagination, Autoplay])
-const Main = () => {
 
+
+const Main = () => {
+    // 클릭시 클래스 입력으로 인한 팝업
+    function PopUp(){
+        document.querySelector('#blindbox').classList.toggle('on');
+        document.querySelector('#midbox').classList.toggle('off');
+    }
+    
 
     return (
         <div id='topbox'>
         <Header/>
         <div id='blindbox'>
-            <div></div>
-            <div></div>
-            <div></div>
+            <div className='m_img'><img src='img/aven1.jpg'/></div>
+            <div className='m_img'><img src='img/aven2.jpg'/></div>
+            <div id='contentbox'>
+            <p>어벤져스</p>
+            <span>2012Year</span>
+            <b><img src='img/america.png' alt=''></img></b>
+            <div className='btn_even'>
+            <Link to='/detail'><p>자세히 보기</p></Link>
+            <p onClick={()=>PopUp()}>되돌아가기</p>
+            </div>
+            </div>
+       
         </div>
 
             <div id='midbox'>
@@ -27,17 +44,6 @@ const Main = () => {
       slidesPerView={3} //한 슬라이드에서 보여줄 갯수
       scrollbar={{ draggable: true }} //슬라이드를 드래그해서 넘길 수 있게 하기
       navigation={false} //버튼
-      // 커버 이펙트 사용
-      effect={"coverflow"}
-      grabCursor={true}
-      centeredSlides={true}
-      coverflowEffect={{
-        rotate: 50,
-        stretch: 0,
-        depth: 100,
-        modifier: 1,
-        slideShadows: true,
-      }} 
       pagination={false}
       modules={[EffectCoverflow, Pagination]} // 커버이펙트 /
       autoplay={{delay: 3000}} //3초마다 자동으로 넘기기
@@ -48,29 +54,40 @@ const Main = () => {
             <div className='inbox' >
             <img src='img/aven.jpg' alt=''></img>
             <div className='textbox'>
-                <p>The Avengers</p>
-                <span>2012Year</span>
-                <b><img src='img/america.png' alt=''></img></b>
+                <p onClick={()=>PopUp()}>Click</p>
                 </div>
             </div>
             </SwiperSlide>
             <SwiperSlide>
             <div className='inbox' >
-               <img src='img/aven.jpg' alt=''></img>
+            <img src='img/aven.jpg' alt=''></img>
+            <div className='textbox'>
+                <p onClick={()=>PopUp()}>Click</p>
+                </div>
             </div>
             </SwiperSlide>
             <SwiperSlide>
             <div className='inbox' >
-                <img src='img/aven.jpg' alt=''></img>
-            </div>
-            </SwiperSlide>
-            <SwiperSlide><div className='inbox' >
-                <img src='img/aven.jpg' alt=''></img>
+            <img src='img/aven1.jpg' alt=''></img>
+            <div className='textbox'>
+                <p onClick={()=>PopUp()}>Click</p>
+                </div>
             </div>
             </SwiperSlide>
             <SwiperSlide>
-                <div className='inbox' >
-               <img src='img/aven.jpg' alt=''></img>
+            <div className='inbox' >
+            <img src='img/aven2.jpg' alt=''></img>
+            <div className='textbox'>
+                <p onClick={()=>PopUp()}>Click</p>
+                </div>
+            </div>
+            </SwiperSlide>
+            <SwiperSlide>
+            <div className='inbox' >
+            <img src='img/aven3.jpg' alt=''></img>
+            <div className='textbox'>
+                <p onClick={()=>PopUp()}>Click</p>
+                </div>
             </div>
             </SwiperSlide>
             </Swiper>
